@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Wood Blocks</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="WoodBlocks">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <script type="text/javascript" src="https://connect.facebook.net/en_US/fbinstant.6.2.js"></script>
+    <script src="src/phaser-facebook-instant-games.js"></script>
+
+    <script type="text/javascript" src="src/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="src/publisher.js"></script>
+
+    <script type="text/javascript" src="src/fontfaceobserver.js"></script>
+    <script type="text/javascript" src="src/phaser-no-physics.min.js"></script>
+
+    <script type="text/javascript" src="src/main.js"></script>
+    <script type="text/javascript" src="src/boot-state.js"></script>
+    <script type="text/javascript" src="src/load-state.js"></script>
+    <script type="text/javascript" src="src/menu-state.js"></script>
+    <script type="text/javascript" src="src/play-state.js"></script>
+    <script type="text/javascript" src="src/shapes.js"></script>
+    <script type="text/javascript" src="src/well.js"></script>
+    <script type="text/javascript" src="src/rui.js"></script>
+    <script type="text/javascript" src="src/tutorial.js"></script>
+
+</head>
+
+<body>
+    <div id="rank" style="display: none;">
+    <div class="container">
+            <header>
+        <h1>Ranking Top 50</h1>
+            </header>
+            <div class="wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id='rank_list'> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="rank_close_bt">
+            <button>CLOSE</button>
+        </div>
+    </div>
+    <div id="canvas-wrapper">
+        <span id="gameContainer"></span>
+    </div> 
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+@font-face {
+    font-family: YatraOne;
+    src: url(assets/YatraOne-Regular.ttf) format("truetype");
+}
+
+body {
+    background-color: black;
+    margin: 0;
+}
+
+#canvas-wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+#gameContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#rank{
+    background: #FFF;
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+}
+
+
+#rank .container > header {
+    margin: 0 auto;
+    padding: 1em;
+    text-align: center;
+}
+
+#rank .container > header h1 {
+  font-weight: 600;
+    font-size: 3em;
+    margin: 0;
+}
+
+#rank .wrapper {
+    line-height: 1.5em;
+    margin: 0 auto;
+    padding: 2em 0 3em;
+    width: 90%;
+    max-width: 2000px;
+    overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+}
+
+th {
+    background-color: #326295;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+}
+
+td, th {
+    padding: 1em 1.5em;
+    text-align: left;
+}
+
+tbody th {
+    background-color: #2ea879;
+}
+tbody tr:nth-child(2n-1) {
+    background-color: #f5f5f5;
+    transition: all .125s ease-in-out;
+}
+tbody tr:hover {
+    background-color: rgba(50,98,149,.3);
+}
+
+td.rank {
+    text-transform: capitalize;
+}
+
+#rank .close_bt{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: #CCC;
+    padding: 10px;    
+}

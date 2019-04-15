@@ -1,0 +1,4 @@
+{"frames":[
+{"filename":"bar_empty","frame":{"x":1,"y":1,"w":298,"h":64}},
+{"filename":"bar_full","frame":{"x":1,"y":66,"w":286,"h":47}},
+{"filename":"logo","frame":{"x":1,"y":114,"w":413,"h":173}}]}
