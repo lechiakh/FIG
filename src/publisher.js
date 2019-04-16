@@ -323,6 +323,10 @@ Publisher.getGlobalRank = function(){
     for (var i =  0 ; i < entries.length; i++) {
             ranklistContainer.insertAdjacentHTML('beforeend', '<tr><td class="rank">'+entries[i].getRank()+'</td><td class="team">'+entries[i].getPlayer().getName()+'</td><td class="points">'+entries[i].getScore()+'</td></tr>');
     }
+    var ranklistContainer1 = document.getElementById('rank_list_gamer');
+    for (var i =  0 ; i < entries.length; i++) {
+            ranklistContainer1.insertAdjacentHTML('beforeend', '<tr><td class="rank"><img  class="design-pic" src='+entries[i].getPlayer().getPhoto()+'></td><td class="team">'+entries[i].getPlayer().getName()+'</td><td class="points">'+entries[i].getScore()+'</td></tr>');
+    }
   });
 }
 
