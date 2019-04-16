@@ -49,15 +49,7 @@ R.ui = {
     },
 
     createRankButton: function(x, y, group, big) {
-        let frameNormal = R.playerData.theme === 0 ? 'btn_lamp_on' : 'btn_lamp_off';
-        let framePressed = R.playerData.theme === 0 ? 'btn_lamp_on_pressed' : 'btn_lamp_off_pressed';
-
-        if (big) {
-            frameNormal += '_big';
-            framePressed += '_big';
-        }
-
-        let btn = game.add.button(x, y, 'gui', this.onRankButton, this, frameNormal, frameNormal, framePressed, frameNormal);
+        let btn = game.add.button(x, y, 'gui', this.onRankButton, this, 'btn_big_play', 'btn_big_play', 'btn_big_play_pressed', 'btn_big_play');
         btn.anchor.set(0.5);
         if (R.sfx.button) btn.setDownSound(R.sfx.button);
         if (group) group.add(btn);
@@ -66,20 +58,12 @@ R.ui = {
     },
 
     onRankButton: function() {
-        Publisher.customShare(); 
+        Publisher.showRank(); 
     },
 
 	
 	 createShareButton: function(x, y, group, big) {
-        let frameNormal = R.playerData.theme === 0 ? 'btn_lamp_on' : 'btn_lamp_off';
-        let framePressed = R.playerData.theme === 0 ? 'btn_lamp_on_pressed' : 'btn_lamp_off_pressed';
-
-        if (big) {
-            frameNormal += '_big';
-            framePressed += '_big';
-        }
-
-        let btn = game.add.button(x, y, 'gui', this.onShareButton, this, frameNormal, frameNormal, framePressed, frameNormal);
+        let btn = game.add.button(x, y, 'gui', this.onShareButton, this, 'btn_big_play', 'btn_big_play', 'btn_big_play_pressed', 'btn_big_play');
         btn.anchor.set(0.5);
         if (R.sfx.button) btn.setDownSound(R.sfx.button);
         if (group) group.add(btn);
@@ -88,6 +72,32 @@ R.ui = {
     },
 	 onShareButton: function() {
         Publisher.customShare(); 
+    },
+
+    customUpdateButton: function(x, y, group, big) {
+        let btn = game.add.button(x, y, 'gui', this.customUpdate, this, 'btn_big_play', 'btn_big_play', 'btn_big_play_pressed', 'btn_big_play');
+        btn.anchor.set(0.5);
+        if (R.sfx.button) btn.setDownSound(R.sfx.button);
+        if (group) group.add(btn);
+        this.btnTheme = btn;
+        this.btnTheme.big = big;
+    },
+
+    customUpdate: function() {
+        Publisher.customUpdate();
+    },
+
+    customShowFriendsButton: function(x, y, group, big) {
+        let btn = game.add.button(x, y, 'gui', this.customShowFriends, this, 'btn_big_play', 'btn_big_play', 'btn_big_play_pressed', 'btn_big_play');
+        btn.anchor.set(0.5);
+        if (R.sfx.button) btn.setDownSound(R.sfx.button);
+        if (group) group.add(btn);
+        this.btnTheme = btn;
+        this.btnTheme.big = big;
+    },
+
+    customShowFriends: function() {
+        Publisher.customShowFriends();
     },
 
     createSoundButton: function(x, y, group) {

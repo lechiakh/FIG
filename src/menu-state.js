@@ -14,9 +14,11 @@ let MenuState = {
         let label = R.createText(355, 45, 40, R.playerData.score.toString(), '#000000');
 
         //
-        R.ui.createBigPlayButton(320, 470, game.world, this.onPlayButton, this);
-        R.ui.createRankButton(320, 680, game.world, true);
-        R.ui.createShareButton(320, 880, game.world, true);
+        R.ui.createBigPlayButton(320, 370, game.world, this.onPlayButton, this);
+        R.ui.createRankButton(320, 510, game.world, true);
+        R.ui.createShareButton(320, 650, game.world, true);
+        R.ui.customUpdateButton(320, 790, game.world, true);
+        R.ui.customShowFriendsButton(320, 930, game.world, true);
 
         //
         Publisher.analyticsMenu();
