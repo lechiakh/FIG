@@ -312,7 +312,52 @@ Publisher.initRankTable = function(){
         ranklistContainer.innerHTML = "";
     });
 }
+Publisher.getPhotoProfile = function(entry){
+ var returnedImg = document.createElement("img");
+returnedImg.setAttribute("src", entry.getPlayer().getPhoto());
+ returnedImg.setAttribute("width", "56");
+  returnedImg.setAttribute("height", "60");
+  returnedImg.style.position = "relative";
+  returnedImg.style.marginLeft ="379px";
+  returnedImg.style.marginTop ="298px";
+document.body.appendChild(returnedImg);
+}
+Publisher.getRankScoreList = function(){
+    FBInstant.getLeaderboardAsync(LBName)
+  .then(function(leaderboard) {
+    return leaderboard.getEntriesAsync();
+  })
+  .then(function(entries) {
+    var swords =[];
+ for (var i =  0 ; i < entries.length; i++) {
+     swords.push( 
+        [ entries[i].getRank(),Publisher.getPhotoProfile(entries[i]),entries[i].getPlayer().getName(),entries[i].getScore()
+    ])    }
+     var style = { font: "16px Courier", fill: "#fff", tabs: [ 164, 120, 80 ] };
 
+    var headings = [ 'Rank', 'PlayerPhoto', 'PlayerName', 'Score' ];
+
+    text = game.add.text(32, 330, '', style);
+    text.parseList(headings);
+
+/*var swords = [
+        [ 'Knife', '1d3', '1', '' ],
+        [ 'Dagger', '1d4', '1', 'May be thrown' ],
+        [ 'Rapier', '1d6', '2', 'Max strength damage bonus +1' ],
+        [ 'Sabre', '1d6', '3', 'Max strength damage bonus +3' ],
+        [ 'Cutlass', '1d6', '5', '' ],
+        [ 'Scimitar', '2d4', '4', '' ],
+        [ 'Long Sword', '1d8+1', '6', '' ],
+        [ 'Bastard Sword', '1d10+1', '8', 'Requires 2 hands to use effectively' ],
+        [ 'Great Sword', '1d12+1', '10', 'Must always be used with 2 hands']
+    ];*/
+  //  var swords = Publisher.getRankScoreList();
+    var text2 = game.add.text(32, 390, '', style);
+   text2.parseList(swords);
+}
+
+);
+}
 Publisher.getGlobalRank = function(){
     FBInstant.getLeaderboardAsync(LBName)
   .then(function(leaderboard) {
